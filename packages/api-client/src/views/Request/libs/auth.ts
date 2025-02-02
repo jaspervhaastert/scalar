@@ -19,7 +19,7 @@ type DisplayScheme = {
 /** Format a scheme object into a display object */
 export const formatScheme = (s: DisplayScheme) => ({
   id: s.uid,
-  label: s.type === 'openIdConnect' ? `${s.nameKey} (coming soon)` : s.nameKey,
+  label: s.nameKey,
 })
 
 /** Formats complex security schemes */

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { DataTableCell, DataTableRow } from '@/components/DataTable'
 import { useWorkspace } from '@/store/store'
+import OpenIdConnect from '@/views/Request/RequestSection/RequestAuth/OpenIdConnect.vue'
 import type { Workspace } from '@scalar/oas-utils/entities'
 import type {
   Collection,
@@ -186,10 +187,9 @@ const updateScheme = <U extends string, P extends Path<SecurityScheme>>(
 
     <!-- Open ID Connect -->
     <template v-else-if="scheme?.type === 'openIdConnect'">
-      <div
-        class="border-t text-c-3 px-4 text-sm min-h-16 justify-center flex items-center bg-b-1">
-        Coming soon
-      </div>
+      <OpenIdConnect
+        :scheme="scheme"
+        :server="server" />
     </template>
   </template>
 </template>
